@@ -1,0 +1,9 @@
+; this is an example of ini file
+[section]
+	key = value ;comment
+	int = 100
+	
+[base] ;this is a section comment, not recommend to do so here.
+  count = 5 ;we do NOT recommend to comment here.
+  comment = we recommend comment in a key.
+  
