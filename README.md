@@ -6,7 +6,7 @@ MCMCFrameworks_Public_Repo
 
 # 📃 Online Doc:
 
-[MCMCFrameworks](https://www.notion.so/MCMCFrameworks-034531f7245f442380974e0a3b358c16) 
+[MCMCFrameworks] Planning
 
 [IniDatabase](https://www.notion.so/IniDatabase-fbf3c156cae942b5a734501e694f42b8) 
 
