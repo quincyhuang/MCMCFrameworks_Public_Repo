@@ -13,6 +13,11 @@ address = ('127.0.0.1', 9999)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(address)  
 
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+
+print("IP: " + hostname + ", " + local_ip)
+
 print("Server Started!")
 s.listen(10)
 
