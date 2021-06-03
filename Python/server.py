@@ -12,13 +12,9 @@ address = ('127.0.0.1', 8888)
 
 # socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(address)  
+s.bind(address) 
 
-
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
-
-print("IP: " + hostname + ", " + local_ip)
+print(s)
 
 
 print("Server Started!")
@@ -61,7 +57,8 @@ def client_handle(conn, addr):
             f.close()
 
             if(len(send) == 0):
-                print("[NULL]\n")
+                print("Result:")
+                print("[NULL]")
                 conn.sendall("[NULL]".encode('utf-8'))
             else:
                 print("Result:")

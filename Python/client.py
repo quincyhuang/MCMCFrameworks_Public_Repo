@@ -2,7 +2,7 @@ import socket
 import sys
 
 
-address = ('127.0.0.1', 8888)  # 服务端地址和端口
+address = ('192.168.1.189', 8888)  # 服务端地址和端口
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     s.connect(address)  # 尝试连接服务端
