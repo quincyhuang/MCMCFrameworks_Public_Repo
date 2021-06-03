@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 # settings
 python_cmd = 'python'
 exit_cmd = 'exit()'
-address = ('192.168.1.189', 8888)  
-# address = ('127.0.0.1', 8888)  
+# address = ('192.168.1.189', 8888)  
+address = ('172.20.10.1', 8888)  
 
 
 # socket
