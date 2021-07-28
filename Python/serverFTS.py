@@ -5,7 +5,7 @@ import time
 import sys
 
 # settings
-bufferSize = 4096
+bufferSize = 4194304
 exit_cmd = 'exit()'
 address = ('127.0.0.1', 7777)  
 
