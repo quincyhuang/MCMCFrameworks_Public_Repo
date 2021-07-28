@@ -4,6 +4,7 @@ import _thread as thread
 import time
 
 
+
 # settings
 python_cmd = 'python'
 exit_cmd = 'exit()'
@@ -69,6 +70,8 @@ def client_handle(conn, addr):
 
     conn.close()
     print('[-] Disconnected with', addr)
+    print()
+    print()
 
 
 thread.start_new_thread(client_accept, ())
