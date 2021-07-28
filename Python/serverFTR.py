@@ -7,7 +7,7 @@ import sys
 # settings
 bufferSize = 4096
 exit_cmd = 'exit()'
-address = ('127.0.0.1', 7777)  
+address = ('127.0.0.1', 6666)  
 
 # socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -16,7 +16,7 @@ s.bind(address)
 print(s)
 
 
-print("Server FTS Started!")
+print("Server FTR Started!")
 s.listen(10)
 
 # thread
@@ -33,37 +33,24 @@ def client_accept():
 
 def client_handle(conn, addr):
     # file
-    filepath = conn.recv(bufferSize).decode('utf-8')
+    try:
+        filepath = conn.recv(bufferSize).decode('utf-8')
+        # if file exists
+        if os.path.exists(filepath):
+            # read file
+            file = open(filepath, 'rb')
+            raw = file.read()
+            print("[Read File!]")
+            print(filepath)
+            print("[DATA TRANSFERRING...]")
+            raw = conn.sendall(raw)
+        else:
+            print("[No File!]")
+            print(filepath)
+            raw = conn.sendall('') 
+    except:
+        pass
 
-    # remove the old file if any
-    if os.path.exists(filepath):
-        os.remove(filepath)
-
-    # create a empty file
-    file = open(filepath, 'ab')
-    file.close()
-    print("[Created File!]")
-    print(filepath)
-
-    print("[DATA TRANSFERRING...]")
-
-    while True:
-        raw = ''
-        try:
-            raw = conn.recv(bufferSize) 
-        except:
-            break
-
-        if not raw:
-            break
-
-        # append the data to file
-        file = open(filepath, 'ab')
-        file.write(raw)
-        file.close()
-        continue
-
-        # end while
 
 
     conn.close()
@@ -81,7 +68,7 @@ while True:
 
 s.close()
 
-print("Server FTS Stopped!")
+print("Server FTR Stopped!")
 
 
 
